@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Yêu anh hong? 😳</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin-top: 80px;
+      background-color: #fff0f5;
+    }
+
+    #heart {
+      font-size: 80px;
+      transition: transform 0.3s ease;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #dcdcdc;
+      color: #333;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="heart">💖</div>
+
+  <h2>Em có yêu anh không? 😚</h2>
+
+  <div>
+    <button id="yesBtn">Chấp nhận 💘</button>
+    <button id="noBtn">Từ chối 🙅‍♀️</button>
+  </div>
+
+  <script>
+    const heart = document.getElementById('heart');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    yesBtn.addEventListener('click', () => {
+      heart.style.transform = 'scale(2)';
+      yesBtn.innerText = 'Yêu nhiều hơn nữa 💞';
+    });
+
+    // Né chuột khi di chuyển đến nút từ chối
+    noBtn.addEventListener('mouseenter', () => {
+      const randX = Math.floor(Math.random() * (window.innerWidth - 200));
+      const randY = Math.floor(Math.random() * (window.innerHeight - 200));
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = randX + 'px';
+      noBtn.style.top = randY + 'px';
+    });
+  </script>
+
+</body>
+</html>
